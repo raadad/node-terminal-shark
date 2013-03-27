@@ -1,0 +1,26 @@
+extends layout
+block bricks
+	hr
+	i#suffix(vax="#{suffix}")
+	button#open.btn.btn-inverse.btn-large.btn-disabled(disabled="disabled")
+		i.icon-eye-open
+		i#openx Connecting to Server , Please wait....
+	#content.raper
+	.wrap
+		.separate.clearFix
+			div#app.app
+
+		
+	script(src='socket.io/socket.io.js')
+	-if(env =="prod")
+		script(src='javascripts/app.production.js')
+	-else
+		script(src='javascripts/term.js')
+		script(src='javascripts/tty.js')
+	script(src='options.js')
+	link(rel='stylesheet', href='stylesheets/bootstrap.css')
+	link(rel='stylesheet', href='stylesheets/style.css')
+	link(rel='stylesheet', href='stylesheets/main.css')
+
+
+	hr
